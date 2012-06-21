@@ -9,7 +9,7 @@
   <%= render 'undefined_route', :route => @inputs[:undefined] %>
 <% else %>
   <% @inputs.each do |input| %>
-    <%= form_tag @route[:path], :method => @route[:verb], :class => 'well form-horizontal', :remote => true do %>
+    <%= form_tag "#{@route[:path]}.json", :method => @route[:verb], :class => 'well form-horizontal', :remote => true do %>
 
       <% if input[:url_params].empty? && input[:post_params].empty? %>
         <div class="alert alert-info">
